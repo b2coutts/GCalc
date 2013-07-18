@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>GCalc Examples</title>
+</head>
+<body>
+
+<p>This file contains examples of math expressions converted to g-expressions, for use in GCalc</p>
+
+<font face="courier">
+<table border=1>
+<tr><td>Math Expression</td><td>g-expression (Input)</td><td>Output</td></tr>
+
+<tr><td>1+2+4</td><td>(+ 1 2 4)</td><td>7</td></tr>
+<tr><td>6*3*1</td><td>(* 6 3 1)</td><td>18</td></tr>
+<tr><td>3-2-1</td><td>(- 3 2 1)</td><td>0</td></tr>
+<tr><td>9/3</td><td>(/ 9 3)</td><td>3</td></tr>
+<tr><td>5-3+4-6</td><td>(- (+ 5 4) 3 6)</td><td>0</td></tr>
+<tr><td>5^2</td><td>(^ 5 2)</td><td>25</td></tr>
+<tr><td>log(4)</td><td>(log 4)</td><td>1.3862943611198906</td></tr>
+<tr><td>sin(pi)</td><td>(sin pi)</td><td>0</td></tr>
+<tr><td>(3+5)/(4-3)</td><td>(/ (+ 3 5) (- 4 3))</td><td>8</td></tr>
+<tr><td>x+4</td><td>(+ x 4)</td><td>(+ x 4)</td></tr>
+<tr><td>3x-4</td><td>(- (* 3 x) 4)</td><td>(- (* 3 x) 4)</td></tr>
+<tr><td>3x+2x+5</td><td>(+ (* 3 x) (* 2 x) 5)</td><td>(+ (* 5 x) 5)</td></tr>
+<tr><td>(x+y)/(x+y)^4</td><td>(/ (+ x y) (^ (+ x y) 4))</td><td>(^ (+ y x) -3)</td></tr>
+<tr><td>(x+2)/(bx+3)</td><td>(/ (+ x 2) (+ (* b x) 3))</td><td>(+ (/ x (+ (* b x) 3)) (/ 2 (+ (* b x) 3)))</td></tr>
+<tr><td>sin(x)/cos(x)</td><td>(/ (sin x) (cos x))</td><td>(/ (sin x) (cos x))</td></tr>
+<tr><td>dy/dx</td><td>(d y x)</td><td>dy/dx</td></tr>
+<tr><td>(d/dx)(e^x)</td><td>(d (^ e x) x)</td><td>(^ e x)</td></tr>
+<tr><td>(d/dx)(2log(x+y))</td><td>(d (* 2 (log (+ x y))) x)</td><td>(+ (/ (* 2 dy/dx) (+ y x)) (/ 2 (+ y x)))</td></tr>
+<tr><td>(d/dx)sin(x)</td><td>(d (sin x) x)</td><td>(cos x)</td></tr>
+<tr><td>dy/dx-y^2-y, where y=x^2-2x+3</td><td>(let (y (+ (^ x 2) (* -2 x) 3)) (- (d y x) (^ y 2) y))</td><td>(- (+ (* 2 x) dy/dx) (+ (^ x 2) (^ (- (+ 3 (^ x 2)) (* 2 x)) 2) 3))</td></tr>
+</font>
+
+</table>
+
+</body>
+</html>
